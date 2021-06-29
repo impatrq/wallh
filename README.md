@@ -7,3 +7,5 @@ Desarrollar y ensamblar una unidad automatizada que reduzca el contacto directo 
 
  - Flores Geraldine
  - David Bourlot
+ - Fontanazzi Valentino
+ - Montoni Juan Manuel
