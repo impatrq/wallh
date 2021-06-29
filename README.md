@@ -6,3 +6,4 @@ Desarrollar y ensamblar una unidad automatizada que reduzca el contacto directo 
 ### Lista de integrantes
 
  - Flores Geraldine
+ - David Bourlot
