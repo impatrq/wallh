@@ -59,6 +59,6 @@ sensor = MLX90614(i2c)
 
 print(sensor)
 while True:
-    print(" Temperatura de la persona: ", sensor.read_object_temp())
+    print(" Temperatura de la persona: ", round(sensor.read_object_temp(),2), "°C" )
     time.sleep_ms(500)
 
