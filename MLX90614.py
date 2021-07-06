@@ -1,6 +1,5 @@
 import ustruct
 import time
-
 from machine import I2C, Pin
 
 class SensorBase:
@@ -14,7 +13,7 @@ class SensorBase:
 		# apply measurement resolution (0.02 degrees per LSB)
 		temp *= .02;
 		# Kelvin to Celcius
-		#temp -= 273.15;
+		temp -= 273.15;
 		return temp;
 
 	def read_ambient_temp(self):
@@ -63,13 +62,14 @@ class MLX90615(SensorBase):
 		self.i2c = i2c
 		self.address = address
 		self.dual_zone = False
-    
 
 
-i2c = I2C(scl=Pin(5), sda=Pin(4))
+i2c = I2C(scl=Pin(22), sda=Pin(21), freq=100000)
+
 sensor = MLX90614(i2c)
 
 print(sensor)
 while True:
     print(sensor.read_ambient_temp(), sensor.read_object_temp())
     time.sleep_ms(500)
+
