@@ -53,23 +53,12 @@ class MLX90614(SensorBase):
 		_dz = ustruct.unpack('<H', _config1)[0] & (1<<6)
 		self.dual_zone = True if _dz else False
 
-class MLX90615(SensorBase):
-
-	_REGISTER_TA = 0x26
-	_REGISTER_TOBJ1 = 0x27
-
-	def __init__(self, i2c, address=0x5b):
-		self.i2c = i2c
-		self.address = address
-		self.dual_zone = False
-
-
 i2c = I2C(scl=Pin(22), sda=Pin(21), freq=100000)
 
 sensor = MLX90614(i2c)
 
 print(sensor)
 while True:
-    print(sensor.read_ambient_temp(), sensor.read_object_temp())
+    print(" Temperatura de la persona: ", sensor.read_object_temp())
     time.sleep_ms(500)
 
