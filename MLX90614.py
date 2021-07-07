@@ -37,6 +37,7 @@ class SensorBase:
 		return self.read_object_temp()
 
 	@property
+
 	def object2_temp(self):
 		return self.read_object2_temp()
 
@@ -55,10 +56,30 @@ class MLX90614(SensorBase):
 
 i2c = I2C(scl=Pin(22), sda=Pin(21), freq=100000)
 
-sensor = MLX90614(i2c)
-
+sensor = MLX90614(i2c) 
+temperaturas = [] 
 print(sensor)
-while True:
-    print(" Temperatura de la persona: ", round(sensor.read_object_temp(),2), "°C" )
-    time.sleep_ms(500)
+for i in range (15):
+  temperaturas.append(round(sensor.read_object_temp(),2) +3)
+  print(" Temperatura de la persona: ", round(sensor.read_object_temp(),2) +3  , "°C" )
+  time.sleep_ms(1000)
 
+contador = 0
+
+for i in temperaturas:
+  if contador == 0:
+    contador = contador + 1
+    pass
+  else:
+    temperaturas[0] = temperaturas[0] + i
+
+
+temperature = temperaturas[0] / 15
+  
+if temperature > 38:
+   print("Voce tein feibre y tu temperatura es ", temperature, "°C")
+else:
+   print("voce tai bien y tu temperatura es ", temperature, "°C")
+
+
+"""if round(sensor.read_object_temp(),2) > 31:"""
