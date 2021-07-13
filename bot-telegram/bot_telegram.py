@@ -42,8 +42,22 @@ def latest_key():
 
 def help_command(update: Update, context: CallbackContext) -> None:
     htext = '''
-    Hola, como estas?
+    Informanos en que podemos ayudarte
     
+'''
+    update.message.reply_text(htext)
+
+def start_command(update: Update, context: CallbackContext) -> None:
+    htext = '''
+
+/obstruccion (mensaje para que lo muevan de lugar)
+
+/start
+
+/help
+
+/fetch (para ver situación anterior)
+
 '''
     update.message.reply_text(htext)
 
@@ -53,14 +67,15 @@ def log(update: Update, context: CallbackContext) -> None:
 
 
 def fetch(update: Update, context: CallbackContext) -> None:
-    update.message.reply_text(db.get(str(latest_key()), 'No Messages Yet.'))
+    update.message.reply_text(db.get(str(latest_key()), 'Esta todo bien.'))
 
 
 def main():
     updater = Updater(os.getenv("TOKEN"))
 
     dispatcher = updater.dispatcher
-    dispatcher.add_handler(CommandHandler("start", help_command))
+    dispatcher.add_handler(CommandHandler("start", start_command))
+    dispatcher.add_handler(CommandHandler("obstruccion", objeto_command))
     dispatcher.add_handler(CommandHandler("help", help_command))
     dispatcher.add_handler(CommandHandler("fetch", fetch))
 
