@@ -1,6 +1,6 @@
 import os
 from replit import db
-
+import replNeverSleep
 from telegram import Update #upm package(python-telegram-bot)
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext  #upm package(python-telegram-bot)
 
@@ -9,6 +9,9 @@ from math import ceil
 from flask import render_template
 from flask import Flask
 app = Flask(__name__)
+
+replNeverSleep.awake('https://bot-obstruccion-1.geraldinejazmi1.repl.co', True)
+my_secret = os.environ['TOKEN']
 
 @app.route('/')
 @app.route('/<int:page>')
