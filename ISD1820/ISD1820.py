@@ -1,0 +1,9 @@
+from machine import Pin
+from time import sleep   
+Play_E=Pin(26,Pin.IN) #DEFINO PLAYE COMO BOTON
+REC=Pin(25,Pin.IN) #DEFINO REC COMO BOTON 
+ 
+while True:
+    state=REC.value() #PARA QUE PLAYE ESTE ENCENDIDO TIENE QUE ESTRA ENCENDIDO REC HAGO QUE DEPENDA DEL VALOR QUE TOME REC
+    P_E.value(state) #DEPENDE PLAYE DE REC
+    sleep(20) #QUE ESPERE 20 SEGUNDOS
