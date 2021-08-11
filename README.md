@@ -5,7 +5,7 @@
 </p>
 
 ## Sobre el proyecto
-#
+
 ### Que es Wall-H?
 Wall-H es una unidad robótica semiautonoma, capaz de manejarse mediante control remoto y suplir finalidades medicas en un hospital.
 
