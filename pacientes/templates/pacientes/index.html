@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title> Wall-H Systems</title>
+        <link href="{% static 'pacientes/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Pacientes</h1>
+        
+        <table class="default">
+            
+            <tr>
+                <th>Nombre y Apellido</th>
+                <th>Fecha de Ingreso</th>
+                <th>Afecciones</th>
+                <th>Fiebre</th>
+                <th>Pulso</th>
+                <th>Oxigenacion</th>
+                <th>Fecha de Mediciones</th>
+            </tr>
+            
+            {% for sensor in sensores %}
+                
+                <tr>
+                    <td>{{sensor.paciente.nombre_apellido}}</td>
+
+                    <td>{{sensor.paciente.fecha_ingreso}}</td>
+
+                    <td>{{sensor.paciente.afecciones}}</td>
+
+                    <td>{{sensor.fiebre}}</td>
+                     
+                    <td>{{sensor.pulso}}</td>
+
+                    <td>{{sensor.oxigeno}}</td>
+
+                    <td>{{sensor.fecha_medidas}}</td>
+                </tr>
+            {% endfor %}
+        </table>   
+    </body> 
+</html>
