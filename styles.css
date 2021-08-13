@@ -1,3 +1,4 @@
+/*----------MENU----------*/
 header {
     width: 100%;
     height: 50px;
@@ -8,9 +9,29 @@ header {
     left: 0;
     z-index: 100;
 }
-.barra-menu {
+
+header .container{
+    display: table;
+}
+
+.container {
     width: 100%;
     padding: 8px;
     margin-top: -3px;
     margin-left: -10px;
 }
+
+.icono {
+    width: 3%;
+    position: fixed;
+    margin-left: 1%;
+}
+
+.titulo {
+    margin-top: 0.5%;
+    margin-left: 5%;
+    position: fixed;
+    font-family: Arial, Garamond, Times New Roman;
+    font-style: italic;
+}
+
