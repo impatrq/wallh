@@ -27,11 +27,28 @@ header .container{
     margin-left: 1%;
 }
 
+.impa {
+    width: 10%;
+    position: fixed;
+    margin-left: 87%;
+    margin-right: 1%;
+}
+
 .titulo {
     margin-top: 0.5%;
-    margin-left: 5%;
-    position: fixed;
+    text-align: center;
+    position: relative;
     font-family: Arial, Garamond, Times New Roman;
     font-style: italic;
 }
 
+.menu {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: rgba(82, 70, 70, 0.9);
+    transition: all 1s;
+    
+    margin-right: 20px;
+}
