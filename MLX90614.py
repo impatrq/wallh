@@ -1,5 +1,5 @@
-import ustruct
-import time
+
+import ustruct, time, network
 from machine import I2C, Pin
 
 class SensorBase:
@@ -55,9 +55,15 @@ class MLX90614(SensorBase):
 		self.dual_zone = True if _dz else False
 
 i2c = I2C(scl=Pin(22), sda=Pin(21), freq=100000)
-
 sensor = MLX90614(i2c) 
 temperaturas = [] 
+
+station = network.WLAN(network.STA_IF)
+station.active(True)
+station.connect("Fibertel WiFi411 5.8GHz", "0141847689")
+station.isconnected()
+station.ifconfig()
+
 print(sensor)
 for i in range (15):
   temperaturas.append(round(sensor.read_object_temp(),2) +3)
@@ -81,5 +87,3 @@ if temperature > 38:
 else:
    print("voce tai bien y tu temperatura es ", temperature, "°C")
 
-
-"""if round(sensor.read_object_temp(),2) > 31:"""
