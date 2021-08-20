@@ -78,7 +78,7 @@
 
             .contacto{
             position:absolute;
-            height: 90px;
+            height: 150px;
             width: 100%;
             background: rgba(150, 149, 149, 0.9);
             }
@@ -90,13 +90,27 @@
 
             .contacto > table {
                 text-align: left;
+                vertical-align: center;
                 margin-top:-40px
             }
 
             .logo {
                 position: absolute;
-                top: 5px;
-                right: 15px;
-                height: 80px;
+                top: 30px;
+                right: 16px;
+                height: 100px;
+            }
+
+            .contact {
+                color: black;
+                text-decoration: none;
+            }
+            .contact_insta {
+                color: black;
+                text-decoration: none;
+            }
+
+            .insta {
+                width: 4%;
             }
 }
