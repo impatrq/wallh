@@ -1,5 +1,10 @@
 @media(max-width: 1376px){
 
+    body {
+        background-position: 90% top;
+        background-image: url("imagenes/fondo.jpg")
+        
+    }
 
     /*----------MENU----------*/
         header {
@@ -59,21 +64,32 @@
             .explicacion > h1 {
                 padding-top: 7%;
                 padding-left: 1%;
+                color: white;
             }
 
             .ul{
                 list-style-type: circle;
+                color: white;
             }
 
-            .explicacion > h2 {
+            h2 {
                 padding-left: 2%;
+                color: white;
             }
 
             p {
                 padding-bottom: 5%;
+                color: black;
             }
 
+            th {
+                color: white;
+            }
 
+            a {
+               color: white;
+                text-decoration: none;
+            }
         /*----------CONTACTO----------*/
 
             .contacto{
@@ -113,4 +129,40 @@
             .insta {
                 width: 4%;
             }
+
+
+    /*----------CONTACTO----------*/
+           
+            .campo >h2 {
+                position: absolute;
+                top: 35%;
+                left:10%;  
+            }
+            
+            .carpeta_campo {
+                margin-top: 20%;
+                height: 600px;
+                width: 40%; 
+                
+            }
+
+            .tecnica >h2 {
+                position: absolute;
+                top: 35%;
+                right:10%;  
+            }
+            .carpeta_tecnica {
+                margin-top: 20%;
+                margin-left: 18%;
+                height: 600px;
+                width: 40%; 
+            }
+            
+
+
+
+
+
+
+
 }
