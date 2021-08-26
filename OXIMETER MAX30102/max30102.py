@@ -1,3 +1,5 @@
+
+
 from ustruct import unpack
 from machine import SoftI2C, Pin
 from utime import sleep_ms, ticks_ms, ticks_diff
@@ -198,7 +200,6 @@ class SensorData():
 
 # Sensor class
 class MAX30102(object):
-
     def __init__(self,
                  i2cHexAddress=MAX3010X_I2C_ADDRESS,
                  i2c=SoftI2C(sda=Pin(I2C_DEF_SDA_PIN),
@@ -805,25 +806,3 @@ class MAX30102(object):
                 # new data found
                 return True
             sleep_ms(1)
-
-i2cInstance = SoftI2C(sda=Pin(my_SDA_pin),
-                      scl=Pin(my_SCL_pin),
-                      freq=100000)
-sensor = MAX30102(i2cHexAddress = 0x57, i2c = i2cInstance)
-
-sensor.setup_sensor()
-
-while(True):
-    # The check() method has to be continuously polled, to check if
-    # there are new readings into the sensor's FIFO queue. When new
-    # readings are available, this function will put them into the storage.
-    sensor.check()
-    
-    # Check if the storage contains available samples
-    if(sensor.available()):
-        # Access the storage FIFO and gather the readings (integers)
-        red_sample = sensor.popRedFromStorage()
-        ir_sample = sensor.popIRFromStorage()
-        
-        # Print the acquired data (can be plot with Arduino Serial Plotter)
-        print(red_sample, ",", ir_sample)
