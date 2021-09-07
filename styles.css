@@ -18,7 +18,7 @@
     /*----------MENU----------*/
         header {
             width: 100%;
-            height: 15%;
+            height: 8%;
             background: black;
             color: white;
             position: absolute;
@@ -33,26 +33,26 @@
         }
 
         .icono {
-            width: 6%;
+            width: 3%;
             position: absolute;
             margin-left: 1%;
         }
 
         .impa{
-            width: 21%;
+            width: 13%;
             position: absolute;
             margin-top: -0.5%;
-            margin-left: 78%;
+            margin-left: 86%;
             margin-right: 11%;
         }
 
         .titulo {
-            margin-top: 0.5%;
+            margin-top: 0.1%;
             text-align: center;
             position: relative;
             font-family: Arial, Garamond, Times New Roman;
             font-style: italic;
-            font-size: 300%;
+            font-size: 220%;
         }
 
         .menu {
@@ -70,7 +70,7 @@
         /*----------BREVE EXPLICACION----------*/
            
             .explicacion > h1 {
-                padding-top: 20%;
+                padding-top: 10%;
                 padding-left: 1%;
                 color: white;
             }
@@ -81,13 +81,13 @@
             }
 
             h2 {
-                padding-top: 5%;
+                padding-top: 3%;
                 padding-left: 2%;
                 color: white;
             }
 
             p {
-                padding-bottom: 5%;
+                padding-bottom: 1%;
                 color: black;
             }
 
@@ -144,7 +144,7 @@
 
             .contacto_ap{
             position:absolute;
-            top: 100%;
+            top: 160%;
             height: 25%;
             width: 80%;
             background: rgba(150, 149, 149, 0.9);
@@ -162,9 +162,9 @@
 
             .logo {
                 position: absolute;
-                top: 10%;
+                top: 20%;
                 right: 2%;
-                height: 80%;
+                height: 70%;
             }
 
             .contact {
@@ -178,6 +178,7 @@
 
             .insta {
                 width: 4%;
+                margin-top:-0.5%;
             }
 
 
@@ -196,9 +197,143 @@
                 
             }
             .carpeta_campo {
-                margin-top: 10%;
+                margin-top: 15%;
                 margin-left: 5%;
-                height: 80%;
+                height: 550px;
                 width: 90%; 
                 
             }
+
+
+    /*----------CARRUSEL DE FOTOS----------*/
+
+            .slide {
+				position: relative;
+                margin-left:2%;
+				box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+				margin-top: 30%;
+			}
+
+			.slide-inner {
+				position: relative;
+				overflow: hidden;
+				width: 100%;
+				height: 60%;
+			}
+
+			.slide-open:checked + .slide-item {
+				position: static;
+				opacity: 100;
+			}
+
+			.slide-item {
+				position: absolute;
+				opacity: 0;
+				-webkit-transition: opacity 0.6s ease-out;
+				transition: opacity 0.6s ease-out;
+			}
+
+			.slide-item img {
+				display: block;
+				height: 500px;
+				max-width: 200%;
+                margin-left:20%;
+                margin-right:20% ;
+			}
+
+			.slide-control {
+				background: rgba(0, 0, 0, 0.28);
+				border-radius: 50%;
+				color: #fff;
+				cursor: pointer;
+				display: none;
+				font-size: 40px;
+				height: 40px;
+				line-height: 35px;
+				position: absolute;
+				top: 50%;
+				-webkit-transform: translate(0, -50%);
+				cursor: pointer;
+				-ms-transform: translate(0, -50%);
+				transform: translate(0, -50%);
+				text-align: center;
+				width: 40px;
+				z-index: 10;
+			}
+
+			.slide-control.prev {
+				margin-left: 2%;
+			}
+
+			.slide-control.next {
+				right: 2%;
+			}
+
+			.slide-control:hover {
+				background: rgba(0, 0, 0, 0.8);
+				color: #aaaaaa;
+			}
+
+			#slide-1:checked ~ .control-1,
+			#slide-2:checked ~ .control-2,
+			#slide-3:checked ~ .control-3,
+            #slide-4:checked ~ .control-4,
+            #slide-5:checked ~ .control-5,
+            #slide-6:checked ~ .control-6,
+            #slide-7:checked ~ .control-7,
+            #slide-8:checked ~ .control-8,
+            #slide-9:checked ~ .control-9 {
+				display: block;
+			}
+
+			.slide-indicador {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				position: absolute;
+				bottom: 2%;
+				left: 0;
+				right: 0;
+				text-align: center;
+				z-index: 10;
+			}
+
+			.slide-indicador li {
+				display: inline-block;
+				margin: 0 5px;
+			}
+
+			.slide-circulo {
+				color: #828282;
+				cursor: pointer;
+				display: block;
+				font-size: 35px;
+			}
+
+			.slide-circulo:hover {
+				color: #aaaaaa;
+			}
+
+			#slide-1:checked ~ .control-1 ~ .slide-indicador li:nth-child(1) .slide-circulo,
+			#slide-2:checked ~ .control-2 ~ .slide-indicador li:nth-child(2) .slide-circulo,
+			#slide-3:checked ~ .control-3 ~ .slide-indicador li:nth-child(3) .slide-circulo,
+            #slide-4:checked ~ .control-4 ~ .slide-indicador li:nth-child(4) .slide-circulo,
+            #slide-5:checked ~ .control-5 ~ .slide-indicador li:nth-child(5) .slide-circulo,
+            #slide-6:checked ~ .control-6 ~ .slide-indicador li:nth-child(6) .slide-circulo,
+            #slide-7:checked ~ .control-7 ~ .slide-indicador li:nth-child(7) .slide-circulo,
+            #slide-8:checked ~ .control-8 ~ .slide-indicador li:nth-child(8) .slide-circulo,
+            #slide-9:checked ~ .control-9 ~ .slide-indicador li:nth-child(9) .slide-circulo {
+				color: #428bca;
+			}
+
+			#titulo {
+				width: 100%;
+				position: absolute;
+				padding: 0px;
+				margin: 0px auto;
+				text-align: center;
+				font-size: 27px;
+				color: rgba(255, 255, 255, 1);
+				font-family: 'Open Sans', sans-serif;
+				z-index: 9999;
+				text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.33), -1px 0px 2px rgba(255, 255, 255, 0);
