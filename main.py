@@ -268,11 +268,12 @@ sensorb3 = hcsr04.HCSR04(trigger_pin=12, echo_pin=13)
 #Declaracion de pines de sensor de temperatura 
 i2c = I2C(scl=Pin(22), sda=Pin(21), freq=100000)
 sensormlx = MLX90614(i2c) 
-
+#Establecer conexion wifi 
 wifi()
-
-
-
+#Arranque de los hilos
+_thread.start_new_thread(thread1,())
+_thread.start_new_thread(thread2,())
+_thread.start_new_thread(thread3,())
 
 
 
