@@ -161,7 +161,7 @@ class MLX90614(SensorBase):
 		_dz = ustruct.unpack('<H', _config1)[0] & (1<<6)
 		self.dual_zone = True if _dz else False
 class Stepper:
-    FULL_ROTATION = int(4075.7728395061727 / 8) # http://www.jangeox.be/2013/10/stepper-motor-28byj-48_25.html
+    FULL_ROTATION = int(4075.7728395061727 / 8)
 
     HALF_STEP = [
         [0, 0, 0, 1],
@@ -190,12 +190,11 @@ class Stepper:
         self.pin3 = pin3
         self.pin4 = pin4
         self.delay = delay  # Recommend 10+ for FULL_STEP, 1 is OK for HALF_STEP
-        
-        # Initialize all to 0
+
         self.reset()
         
     def step(self, count, direction=1):
-        """Rotate count steps. direction = -1 means backwards"""
+        """Pasos a tomar, -1 = Reversa"""
         if count<0:
             direction = -1
             count = -count
@@ -210,7 +209,6 @@ class Stepper:
     def angle(self, r, direction=1):
     	self.step(int(self.FULL_ROTATION * r / 360), direction)
     def reset(self):
-        # Reset to 0, no holding, these are geared, you can't move them
         self.pin1(0) 
         self.pin2(0) 
         self.pin3(0) 
