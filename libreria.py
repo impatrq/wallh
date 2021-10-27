@@ -107,7 +107,6 @@ class Motor:
     self.in3.value(1)
     self.in4.value(0)
 
-
 class SensorBase:
   
 
@@ -220,6 +219,65 @@ class Stepper:
 def create(pin1, pin2, pin3, pin4, delay=2, mode='HALF_STEP'):
 	return Stepper(mode, pin1, pin2, pin3, pin4, delay)
 
+def analogicRead(adc1, adc2, adc0, s):
+  vry = adc1.read()
+  vrx = 4095 - adc2.read()
+  sw = adc0.read()
+  dato = ""
+  if vrx > 4050:
+    print("GirarAtras()")
+    dato = "GirarAtras()"
+  elif vrx < 50:
+    print("Adelante()")
+    dato = "Adelante()"
+  elif vry < 50:
+    print("GirarIzq()")
+    dato = "GirarIzq()"
+  elif vry > 4050:
+    print("GirarDer()")
+    dato = "GirarDer()" 
+  elif sw < 50:
+    print("Boton apretado")
+    dato = "Boton()"
+  else:
+    print("nada apretado")
+    dato = "Nada"
+  print("")
+  s.send(dato.encode())
+
+def ultrasonicRead(sensora1, sensora2, sensorb3):
+  distancea1 = round(sensora1.distance_cm())
+  distancea2 = round(sensora2.distance_cm())
+  distanceb3 = round(sensorb3.distance_cm())
+  return(distancea1, distancea2, distanceb3)
 
 
+def readOxTemp(sensormax, sensor):
+    sensormax.read_sensor()
+    rawspo2 = sensormax.ir
+    rawheartrate = sensormax.red
+
+    spo2 = rawspo2/100
+    heartrate = rawheartrate/200
+    if spo2 > 100 :
+        spo2 = 99.9
+    elif spo2 < 93.0 and spo2 > 50.0 :
+        spo2 = 93.0
+    elif spo2 < 49 :
+        spo2 = 0.0
+    else:
+        spo2 = spo2
+
+    if heartrate > 130 :
+        heartrate = 150
+    elif heartrate < 65 and heartrate > 50 :
+        heartrate = 65.0
+    elif heartrate < 49 :
+        heartrate = 0.0
+    else :
+        heartrate = heartrate
+
+    temp = round(sensor.read_object_temp(),2)+2
+
+    return temp, spo2, heartrate
 
