@@ -5,14 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wall-H Website</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header class="header" id="inicio">
-        <img src="img/hamburgesa.svg" alt="" class="hamburguer">
+        <img src="static/img/hamburgesa.svg" alt="" class="hamburguer">
         <nav class="menu-navegacion">
             <a href="#inicio">Inicio</a>
             <a href="#breve-resumen">Breve Resumen</a>
@@ -32,7 +32,7 @@
         <section class="contenedor" id="breve-resumen">
             <h2 class="subtitulo">Un breve resumen</h2>
             <div class="contenedor-resumen">
-                <img src="img/Sin título-2.png" alt="">
+                <img src="static/img/Sin título-2.png" alt="">
                 <div class="lista-resumen">
                     <div class="resumen">
                         <h3 class="n-resumen"><span class="number">1</span>¿Que es Wall-H?</h3>
@@ -63,43 +63,43 @@
             <div clas="contenedor">
                 <h2 class="subtitulo">Galeria</h2>
                 <div class="contenedor-galeria">
-                    <img src="img/img 1.jpeg" alt="" class="img-galeria">
-                    <img src="img/img 2.jpeg" alt="" class="img-galeria">
-                    <img src="img/img 3.jpg" alt="" class="img-galeria">
-                    <img src="img/img 4.png" alt="" class="img-galeria">
-                    <img src="img/img 5.jpeg" alt="" class="img-galeria">
-                    <img src="img/img 6.JPG" alt="" class="img-galeria">
-                    <img src="img/img 7.png" alt="" class="img-galeria">
-                    <img src="img/img 8.jpg" alt="" class="img-galeria">
-                    <img src="img/img 9.png" alt="" class="img-galeria">
+                    <img src="static/img/img 1.jpeg" alt="" class="img-galeria">
+                    <img src="static/img/img 2.jpeg" alt="" class="img-galeria">
+                    <img src="static/img/img 3.jpg" alt="" class="img-galeria">
+                    <img src="static/img/img 4.png" alt="" class="img-galeria">
+                    <img src="static/img/img 5.jpeg" alt="" class="img-galeria">
+                    <img src="static/img/img 6.JPG" alt="" class="img-galeria">
+                    <img src="static/img/img 7.png" alt="" class="img-galeria">
+                    <img src="static/img/img 8.jpg" alt="" class="img-galeria">
+                    <img src="static/img/img 9.png" alt="" class="img-galeria">
                 </div>
             </div>
         </section>
         <section class="imagen-light">
-            <img src="img/close.svg" alt="" class="close">
+            <img src="static/img/close.svg" alt="" class="close">
             <img class="agregar-imagen" src="" alt="">
         </section>
         <section class="contenedor" id="nosotros">
             <h2 class="subtitulo">Nosotros</h2>
             <section class="nostro">
                 <div class="cont-nosot">
-                    <img src="img/david.JPG" alt="">
+                    <img src="static/img/david.JPG" alt="">
                     <h3 class="n-nosotr">David Bourlot</h3>
                 </div>
                 <div class="cont-nosot">
-                    <img src="img/geral.JPG" alt="">
+                    <img src="static/img/geral.JPG" alt="">
                     <h3 class="n-nosotr">Geraldine Flores</h3>
                 </div>
                 <div class="cont-nosot">
-                    <img src="img/fonta.JPG" alt="">
+                    <img src="static/img/fonta.JPG" alt="">
                     <h3 class="n-nosotr">Valentino Fontanazzi</h3>
                 </div>
                 <div class="cont-nosot">
-                    <img src="img/monto.JPG" alt="">
+                    <img src="static/img/monto.JPG" alt="">
                     <h3 class="n-nosotr">Juan Manuel Montoni</h3>
                 </div>
                 <div class="cont-nosot">
-                    <img src="img/nico.JPG" alt="">
+                    <img src="static/img/nico.JPG" alt="">
                     <h3 class="n-nosotr">Nicolas Ezequiel Moreno</h3>
                 </div>
             </section>
@@ -136,8 +136,8 @@
     </footer>
 
 
-    <script src="js/menu.js"></script>
-    <script src="js/ligthboxt.js"></script>
+    <script src="static/js/menu.js"></script>
+    <script src="static/js/ligthboxt.js"></script>
 </body>
 
 </html>
