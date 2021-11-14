@@ -247,7 +247,11 @@ def ultrasonicRead(sensora1, sensora2, sensorb3):
   distancea1 = round(sensora1.distance_cm())
   distancea2 = round(sensora2.distance_cm())
   distanceb3 = round(sensorb3.distance_cm())
-  return(distancea1, distancea2, distanceb3)
+
+  if distancea1 < 30 or distancea2 < 30 or distanceb3 < 30:
+    return("Stop")
+  else:
+    return("Continue")
 
 
 def readOxTemp(sensormax, sensor):
@@ -278,4 +282,3 @@ def readOxTemp(sensormax, sensor):
     temp = round(sensor.read_object_temp(),2)+2
 
     return temp, spo2, heartrate
-
