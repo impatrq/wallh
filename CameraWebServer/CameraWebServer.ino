@@ -8,19 +8,18 @@
 //
 
 // Select camera model
-//#define CAMERA_MODEL_WROVER_KIT // Has PSRAM
-//#define CAMERA_MODEL_ESP_EYE // Has PSRAM
-//#define CAMERA_MODEL_M5STACK_PSRAM // Has PSRAM
-//#define CAMERA_MODEL_M5STACK_V2_PSRAM // M5Camera version B Has PSRAM
-//#define CAMERA_MODEL_M5STACK_WIDE // Has PSRAM
-//#define CAMERA_MODEL_M5STACK_ESP32CAM // No PSRAM
+
 #define CAMERA_MODEL_AI_THINKER // Has PSRAM
-//#define CAMERA_MODEL_TTGO_T_JOURNAL // No PSRAM
+
 
 #include "camera_pins.h"
 
-const char* ssid = "Blacky 2.4GHz";
-const char* password = "2014Blacky";
+const char* ssid = "esp";
+const char* password = "12345678";
+
+IPAddress ip(192,168,1,200);
+IPAddress gateway(192,168,1,1);
+IPAddress subnet(255,255,255,0);
 
 void startCameraServer();
 
@@ -89,7 +88,7 @@ void setup() {
   s->set_vflip(s, 1);
   s->set_hmirror(s, 1);
 #endif
-
+  WiFi.config(ip, gateway, subnet);
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
