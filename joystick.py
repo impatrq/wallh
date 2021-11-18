@@ -1,6 +1,7 @@
 from machine import ADC,Pin
 import time, usocket, network, _thread
 from libreria import analogicRead
+#https://www.youtube.com/watch?v=bwG1Ne2ZI4g
 
 def thread1():
   while True:

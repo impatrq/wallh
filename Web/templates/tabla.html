@@ -1,0 +1,34 @@
+{% extends "tablabase.html" %}
+
+{% block content %}
+  <table id="data" class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Temperatura</th>
+        <th>Oxigeno</th>
+        <th>Pulso</th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for paciente in pacientes %}
+        <tr>
+          <td>{{ paciente[0] }}</td>
+          <td>{{ paciente[1] }}</td>
+          <td>{{ paciente[2] }}</td>
+          <td>{{ paciente[3] }}</td>
+          <td>{{ paciente[4] }}</td>
+          <td>{{ paciente[5] }}</td>
+          <td>{{ paciente[6] }}</td>
+          <td>
+            <a href="{{ url_for('delete', dni=paciente[3])}}">Eliminar</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, session, flash, g, redirect, url_for
 from flask_wtf import CSRFProtect
-
+from creardb import *
 import forms 
 from NiceLogin import * 
 
@@ -8,10 +8,10 @@ app = Flask(__name__)
 csrf = CSRFProtect(app)
 app.config['SECRET_KEY'] = 'my_secret_key'
 
-@app.before_request
-def before_request():
-    if 'username' not in session and (request.endpoint != 'login'): # or request.endpoint != 'index'
-        return redirect(url_for('login'))
+# @app.before_request
+# # def before_request():
+# #     if 'username' not in session and (request.endpoint != 'login'): # or request.endpoint != 'index'
+# #         return redirect(url_for('login'))
 
 @app.route("/")
 def index():
@@ -46,6 +46,31 @@ def logout():
 
     return redirect(url_for("login"))
 
-if __name__ == '__main__':
-    app.run(debug = True, host="0.0.0.0")
+@app.route("/add", methods=['GET', 'POST'])
+def add():
+    '''Ruta para agregar un paciente'''
+    paciente = forms.Paciente(request.form)
+    if request.method == 'POST' and paciente.validate():        
+        añadirPaciente(request.form['nombre'],request.form['apellido'],request.form['DNI'])
+        return(url_for('db'))
 
+    return render_template('add.html')  
+
+
+@app.route("/db")
+def db(): 
+    pacientes = getPacientes()
+    print(pacientes)
+    return render_template('tabla.html', pacientes = pacientes)
+
+@app.route("/delete/<string:dni>")
+def delete(dni):
+    '''Ruta para borrar un paciente'''
+    eliminarPaciente(dni)
+    return redirect(url_for('db'))
+
+
+
+if __name__ == '__main__':
+    print("hola")
+    app.run(debug = True, host="0.0.0.0")

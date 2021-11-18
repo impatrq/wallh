@@ -4,7 +4,7 @@ from time import sleep
 from NiceEncrypter import Encrypter
 from random import randint
 
-conn = sqlite3.connect('APP.db', check_same_thread=False)
+conn = sqlite3.connect('Hospital.db', check_same_thread=False)
 cursor = conn.cursor()
 
 # Creo la tabla de usuario
