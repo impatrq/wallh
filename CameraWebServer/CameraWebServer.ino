@@ -17,9 +17,9 @@
 const char* ssid = "esp";
 const char* password = "12345678";
 
-IPAddress ip(192,168,1,200);
-IPAddress gateway(192,168,1,1);
-IPAddress subnet(255,255,255,0);
+//IPAddress ip(192,168,155,87);
+//IPAddress gateway(192,168,155,2);
+//IPAddress subnet(255,255,255,0);
 
 void startCameraServer();
 
@@ -88,7 +88,7 @@ void setup() {
   s->set_vflip(s, 1);
   s->set_hmirror(s, 1);
 #endif
-  WiFi.config(ip, gateway, subnet);
+ // WiFi.config(ip, gateway, subnet);
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
@@ -102,7 +102,11 @@ void setup() {
 
   Serial.print("Camera Ready! Use 'http://");
   Serial.print(WiFi.localIP());
+  
   Serial.println("' to connect");
+  Serial.print(WiFi.gatewayIP());
+  Serial.print(WiFi.subnetMask());
+  
 }
 
 void loop() {
