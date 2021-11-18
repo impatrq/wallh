@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wall-H Website</title>
+    <link rel="shortcut icon" href="static/img/favicon.png" />
     <link rel="stylesheet" href="{{ url_for('static',filename='css/estilos.css') }}">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
@@ -80,36 +81,53 @@
             <img class="agregar-imagen" src="" alt="">
         </section>
         <section class="contenedor" id="nosotros">
-            <h2 class="subtitulo">Nosotros</h2>
+            <h2 class="subtitulo">Reconocimientos</h2>
             <section class="nostro">
                 <div class="cont-nosot">
-                    <img src="static/img/david.JPG" alt="">
-                    <h3 class="n-nosotr">David Bourlot</h3>
-                </div>
-                <div class="cont-nosot">
-                    <img src="static/img/geral.JPG" alt="">
-                    <h3 class="n-nosotr">Geraldine Flores</h3>
-                </div>
-                <div class="cont-nosot">
-                    <img src="static/img/fonta.JPG" alt="">
-                    <h3 class="n-nosotr">Valentino Fontanazzi</h3>
-                </div>
-                <div class="cont-nosot">
-                    <img src="static/img/monto.JPG" alt="">
-                    <h3 class="n-nosotr">Juan Manuel Montoni</h3>
-                </div>
-                <div class="cont-nosot">
-                    <img src="static/img/nico.JPG" alt="">
-                    <h3 class="n-nosotr">Nicolas Ezequiel Moreno</h3>
+                    <img src="img/img 9.png" alt="">
                 </div>
             </section>
+        </section>
+        <section class="conetenedor" id="apartado-tecnico">
+            <h2 class="subtitulo">Apartado Técnico</h2>
+            <div class="lista-ap">
+                <div class="ap">
+                    <h3 class="n-resumen"><span class="number">1</span>Objetivo</h3>
+                    <p>Desarrollamos y ensamblamos una unidad automatizada para reducir el contacto directo del paciente con sintomatologías infecciosas y el personal de medicina, mediante un desarrollo de electrónica/informático. Este mide el ritmo cardiaco,
+                        temperatura, oxígeno en sangre para con estos datos, poder controlar la condición de los pacientes, y generar un registro en el sistema.
+                    </p>
+                </div>
+                <div class="ap">
+                    <h3 class="n-resumen"><span class="number">2</span>Usos del Proyecto</h3>
+                    <p>Los médicos y enfermeros evitarán el contacto constante con el paciente, va a tomar la frecuencia cardiaca, temperatura y oxígeno en sangre del paciente de forma más rápida y eficaz. Muestra los datos recaudados del paciente con mayor
+                        eficacia al enviarlos automáticamente a una base de datos en el ordenador del médico, unificando la ubicación de la información.
+                    </p>
+                </div>
+                <div class="ap">
+                    <h3 class="n-resumen"><span class="number">3</span>Descripción del funcionamiento</h3>
+                    <p>La unidad Robótica es capaz de medir diferentes valores por medio de del sensor oxímetro y el termómetro infrarrojo (ritmo cardiaco, temperatura, oxígeno en sangre) para mostrarle los valores de dichas mediciones al personal médico.
+                        El robot se va a mover mediante un Joystick que estará en un aparato de control del robot, esté siendo capaz de moverse hacia el frente o girar 90°. Su movimiento es libre. La unidad la vamos a usar en el ala de internación.
+                    </p>
+                </div>
+                <div class="ap">
+                    <h3 class="subtitulo-ap">¿Queres saber mas?</h3>
+                    <p>Te dejamos aca abajo un video en el cual explicamos todo lo que hay que saber sobre el Wall-H, tambien te dejamos unos botones en los que podes ver las carpetas que contienen todo el proceso de desarrollo e información técnica del
+                        Proyecto.
+                    </p>
+                </div>
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RJ1JZLPiRxY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="video-presentacion"></iframe>
+            <div class="contenedor-carpetas">
+                <embed src="static/files/Carpeta Tecnica.pdf#zoom=100&toolbar=0&statusbar=1&navepages=0&view=fitH,100" type="application/pdf" />
+                <embed src="static/files/Carpeta de Campo.pdf#zoom=100&toolbar=0&navepages=0&view=fitH,100" type="application/pdf" />
+            </div>
         </section>
     </main>
     <footer id="contacto">
         <div class="contenedor footer-content">
             <div class="contact-us">
                 <h2 class="brand">Wall-H</h2>
-                <p></p>
+                <p>Tú Salud es nuestra prioridad</p>
             </div>
             <div class="social-media">
                 <a href="https://instagram.com/wallh_robot" class="social-media-icon">
