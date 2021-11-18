@@ -1,6 +1,6 @@
 import sqlite3
 from time import sleep
-from TimeFunctions import getDay, getTime
+#from TimeFunctions import getDay, getTime
 from NiceEncrypter import Encrypter
 from random import randint
 

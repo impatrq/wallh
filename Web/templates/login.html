@@ -33,12 +33,13 @@
             <h2 class="subtitulo">Ingreso Personal Medico</h2>
             <div class="contenedor_login">
                 <div class="contenedor_login-register">
-                    <form action="" class="formulario_login">
+                    <form id="Login" method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
                         <h2>Iniciar Sesión</h2>
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
-                        <button>Igresar</button>
-
+                        {{ form.username() }} {{ form.username.label() }}
+                        
+                        {{ form.password() }} {{ form.password.label() }}
+                        <button type="submit" class="form-button">Ingresar</button>
                     </form>
                 </div>
                 <img src="static/img/Sin título-2.png" alt="">
