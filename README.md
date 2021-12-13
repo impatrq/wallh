@@ -24,3 +24,10 @@ La unidad permite que enfermeros y personal medico eviten el entrar en contacto 
  - Montoni Juan Manuel ➔ 📧 Correo: juanma843cai@gmail.com ➔ 📷 Instagram: [juanmontoni](https://www.instagram.com/juanmontoni/)
  - Moreno Nicolas ➔ 📧 Correo: nicomoreno2002@gmail.com ➔ 📷 Instagram: [nicolass_moreno_](https://www.instagram.com/nicolass_moreno_/)
 
+## Reconocimientos
+
+<p align="center">
+<img title="a title" alt="Alt text" src="https://i.imgur.com/Ly3fZt5.png" width="600">
+
+<img title="a title" alt="Alt text" src="https://i.imgur.com/U0SorKg.png" width="600">
+</p>
